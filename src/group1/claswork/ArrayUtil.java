@@ -2,7 +2,7 @@ package group1.claswork;
 
 public class ArrayUtil {
     public static void main(String[] args) {
-        int[] array = {5, 8, 14, 29, 25, 39, 26, 42, 45, 50};
+        int[] array = {5, 8, 14, 29, 25, 39, 26, 42, 45, 80};
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
@@ -20,13 +20,11 @@ public class ArrayUtil {
 
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i]> x);{
-            }
-            x = array[i];
-            {
+            if (x > array[i]);{
+                x = array[0];
             }
             }
-            System.out.println("min " + x);
+            System.out.println("min  " + x);
         }
     }
 

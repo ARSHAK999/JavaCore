@@ -2,36 +2,32 @@ package group1.claswork;
 
 public class orinak {
     public static void main(String[] args) {
+        int[] array = {2, 5, 8, 10, 32, 22, 11, 66, 12, 30, 1};
 
-        System.out.println("figure 1");
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print("  ");
-            }
-            for (int k = 5; k > i; k--) {
-                System.out.print(" *");
-            }
-            System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
         }
-        System.out.println("figure 2");
+        System.out.println();
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 5; j > i; j--) {
-                System.out.print(" ");
+        int a = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > a) {
+                a = array[i];
+
             }
-            for (int k = 0; k <= i; k++) {
-                System.out.print("* ");
-            }
-            System.out.println();
         }
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print(" ");
+        System.out.println("max =  " + a);
+
+
+
+
+        for (int i = 0; i < array.length; i++) {
+            if (a > array[i]) {
+                a = array[i];
+
             }
-            for (int k = 4; k > i; k--) {
-                System.out.print(" *");
-            }
-            System.out.println();
         }
+        System.out.println("min =  " + a);
     }
-}
+    }
