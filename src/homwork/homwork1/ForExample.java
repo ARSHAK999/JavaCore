@@ -1,4 +1,4 @@
-package group1.claswork.homework1;
+package homwork.homwork1;
 
 public class ForExample {
     /*
