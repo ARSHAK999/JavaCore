@@ -1,4 +1,4 @@
-package group1.claswork.homework1;
+package group1.claswork.homework2;
 
 public class ArrayUtil {
     public static void main(String[] args) {
