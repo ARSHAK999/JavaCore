@@ -1,4 +1,4 @@
-package group1.claswork.homework1;
+package homwork3;
 
 public class ArrayUntil {
     public static void main(String[] args) {
