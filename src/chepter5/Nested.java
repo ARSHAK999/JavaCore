@@ -8,8 +8,9 @@ public class Nested {
             for (j = i; j <= 10; j++) {
 
                 System.out.print(".");
+            }
                 System.out.println();
             }
         }
     }
-}
+
