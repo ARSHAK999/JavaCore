@@ -4,7 +4,7 @@ import static jdk.nashorn.internal.objects.NativeJava.extend;
 
 public class DynamicArray {
     private int[] array = new int[10];
-    private  int size ;
+    private  int size = 0 ;
 
     public void add(int item){
         if(size == array.length){

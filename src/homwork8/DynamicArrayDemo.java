@@ -2,12 +2,12 @@ package homwork8;
 
 public class DynamicArrayDemo {
     public static void main(String[] args) {
-        DynamicArray  dy = new DynamicArray();
+        DynamicArray  nums = new DynamicArray();
         for (int i = 0; i < 20; i++) {
-            dy.add(i);
+            nums.add(i);
         }
-        dy.print();
+        nums.print();
         System.out.println();
-        System.out.println(dy.get(0));
+        System.out.println(nums.get(0));
     }
 }
