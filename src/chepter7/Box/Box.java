@@ -1,4 +1,4 @@
-package chepter7;
+package chepter7.Box;
 
 public class Box {
     double width;
