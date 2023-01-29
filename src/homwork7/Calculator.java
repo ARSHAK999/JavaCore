@@ -1,7 +1,7 @@
 package homwork7;
 
 public class Calculator {
-    public static void main(String[] args) {
+    {
 
     }
     int plus(int firstNumber, int secondNumber) {
