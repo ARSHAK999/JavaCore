@@ -57,12 +57,7 @@ public class BraceChecker {
                     break;
             }
         }
-//        while ((lastBracket = (char) stack.pop()) != 0) {
-//            System.out.print("Error: opened " + lastBracket + " but not closed ");
-//        }
-//        while (!stack.isEmpty()){
-//            System.out.print("Error: opened " + lastBracket + " but not closed ");
-//        }
+
     }
 
 }
