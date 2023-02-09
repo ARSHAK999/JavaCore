@@ -9,25 +9,19 @@ public class Stack {
     }
 
     void push(int item) {
-        if (tos == array.length-1) {
-            extend();
+        if (tos == 9) {
+            System.out.println("tos filled");
         }
         array[++tos] = item;
     }
 
     int pop() {
         if (tos == -1) {
-            System.out.println("Stack not loaded");
+
         }
         return array[tos--];
     }
-    public void extend() {
-        int[] array2 = new int[array.length + 10];
-        for (int i = 0; i < array.length; i++) {
-            array2[i] = array[i];
-        }
-        array = array2;
+    public boolean isEmpty(){
+        return  tos == -1;
     }
 }
-
-

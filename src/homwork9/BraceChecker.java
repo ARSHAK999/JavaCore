@@ -1,37 +1,68 @@
 package homwork9;
 
 public class BraceChecker {
-    private final String text;
-    private final Stack stack = new Stack();
+    private String text;
 
-    public BraceChecker(String text) {
+    BraceChecker(String text) {
         this.text = text;
     }
 
     public void check() {
+        Stack stack = new Stack();
+        int last;
+        char lastBracket;
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
-            if (c == '{' || c == '[' || c == '(') {
-                stack.push(c);
-            } else if (c == '}' || c == ']' || c == ')') {
-                if (stack.tos == -1) {
-                    System.out.println("Error : Closed By " + c + " but not opened at index " + i);
-                    return;
-                }
-                int top = stack.pop();
-                char first = (char) top;
-                if ((c == '}' && first != '{') || (c == ']' && first != '[') || (c == ')' && first != '(')) {
-                    System.out.println("Error : Opened By " + first + " but closed by " + c + " at index " + i);
-                    return;
-                }
+            System.out.print(c);
+            switch (c) {
+                case '(':
+                case '{':
+                case '[':
+                    stack.push(c);
+                    break;
+                case ')':
+                    last = stack.pop();
+                    if (last == 0) {
+                        System.out.print("Error at" + i + "closed" + c + "but not opened");
+                    } else {
+                        lastBracket = (char) last;
+                        if (lastBracket != '(') {
+                            System.out.print("Error at" + i + "opened" + lastBracket + "but closed" + c);
+                        }
+                    }
+                    break;
+                case '}':
+                    last = stack.pop();
+                    if (last == 0) {
+                        System.out.print("Error at" + i + "closed" + c + "but not opened");
+                    } else {
+                        lastBracket = (char) last;
+                        if (lastBracket != '{') {
+                            System.out.print("Error at" + i + "opened" + lastBracket + "but closed" + c);
+
+                        }
+                    }
+                    break;
+                case ']':
+                    last = stack.pop();
+                    if (last == 0) {
+                        System.out.print("Error at" + i + "closed" + c + "but not opened");
+                    } else {
+                        lastBracket = (char) last;
+                        if (lastBracket != ']') {
+                            System.out.print("Error at" + i + "opened" + lastBracket + "but closed" + c);
+
+                        }
+                    }
+                    break;
             }
         }
-        if (stack.tos != -1) {
-            int c = stack.pop();
-            char symbol = (char) c;
-            System.out.println("Error: Opened By " + symbol + " but not closed");
-            return;
-        }
-        System.out.println("Text is a correct");
+//        while ((lastBracket = (char) stack.pop()) != 0) {
+//            System.out.print("Error: opened " + lastBracket + " but not closed ");
+//        }
+//        while (!stack.isEmpty()){
+//            System.out.print("Error: opened " + lastBracket + " but not closed ");
+//        }
     }
+
 }
