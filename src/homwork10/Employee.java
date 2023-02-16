@@ -1,5 +1,7 @@
 package homwork10;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 public class Employee {
@@ -10,15 +12,19 @@ public class Employee {
     private String company;
     private String position;
     private boolean active = true;
+    private Date registerDate;
+    private Date dateOfBirthday;
 
 
-    public Employee(String name, String surname, String id, double salary, String company, String position) {
+    public Employee(String name, String surname, String id, double salary, String company, String position, Date registerDate, Date dateOfBirthday) {
         this.name = name;
         this.surname = surname;
         this.id = id;
         this.salary = salary;
         this.company = company;
         this.position = position;
+        this.registerDate = registerDate;
+        this.dateOfBirthday = dateOfBirthday;
     }
 
     public Employee() {
@@ -39,6 +45,11 @@ public class Employee {
 
     @Override
     public String toString() {
+        SimpleDateFormat sdfReg = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat sdfBirth = new SimpleDateFormat("dd/MM/yyyy");
+        String registerDateStr = sdfReg.format(registerDate);
+        String dateOfBirthdayStr = sdfBirth.format(dateOfBirthday);
+
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
@@ -47,6 +58,8 @@ public class Employee {
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
                 ", active=" + active +
+                ", registerDate=" + registerDateStr +
+                ", dateOfBirthday=" + dateOfBirthdayStr +
                 '}';
     }
 
@@ -101,6 +114,22 @@ public class Employee {
     public boolean isActive() {
         return active;
     }
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    public Date getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(Date dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
+    }
+
 
     public void setActive(boolean active) {
         this.active = active;

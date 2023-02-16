@@ -1,5 +1,8 @@
 package homwork10;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class EmployeeDemo {
@@ -7,7 +10,7 @@ public class EmployeeDemo {
     private static EmployeeStorage employeeStorage = new EmployeeStorage();
     private static Employee employee;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         boolean isRun = true;
         while (isRun) {
             System.out.println("Please input 0 for exit");
@@ -68,7 +71,7 @@ public class EmployeeDemo {
     }
 
 
-    private static void employeeAdd() {
+    private static void employeeAdd() throws ParseException {
         System.out.println("please input name");
         String name = scanner.nextLine();
         System.out.println("please input surname");
@@ -85,7 +88,8 @@ public class EmployeeDemo {
         String companyName = scanner.nextLine();
         System.out.println("Please input position");
         String position = scanner.nextLine();
-        employee = new Employee(name, surname, id, Double.parseDouble(salary), companyName, position);
+        Date date = new Date();
+        employee = new Employee(name, surname, id, Double.parseDouble(salary), companyName, position, date, dateOfBirthday());
         employeeStorage.add(employee);
     }
 
@@ -103,5 +107,13 @@ public class EmployeeDemo {
         System.out.println("Please input position");
         String position = scanner.nextLine();
         employeeStorage.changeEmployeePositionById(id, position);
+    }
+
+    private static Date dateOfBirthday() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        System.out.println("Please input employee birthday (12/02/2023)");
+        String dateOfBirthdayStr = scanner.nextLine();
+        Date parse = sdf.parse(dateOfBirthdayStr);
+        return parse;
     }
 }
