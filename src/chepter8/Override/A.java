@@ -7,6 +7,7 @@ public class A {
         j = b;
     }
     void show(){
+
         System.out.println("i и j: "+ i +" "+ j);
     }
 }
