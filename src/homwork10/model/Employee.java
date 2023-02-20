@@ -1,4 +1,4 @@
-package homwork10;
+package homwork10.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,14 +9,14 @@ public class Employee {
     private String surname;
     private String id;
     private double salary;
-    private String company;
+    private Company company;
     private String position;
     private boolean active = true;
     private Date registerDate;
     private Date dateOfBirthday;
 
 
-    public Employee(String name, String surname, String id, double salary, String company, String position, Date registerDate, Date dateOfBirthday) {
+    public Employee(String name, String surname, String id, double salary, Company company, String position, Date registerDate, Date dateOfBirthday) {
         this.name = name;
         this.surname = surname;
         this.id = id;
@@ -95,11 +95,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 

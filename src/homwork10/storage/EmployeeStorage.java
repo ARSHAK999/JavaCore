@@ -1,4 +1,6 @@
-package homwork10;
+package homwork10.storage;
+
+import homwork10.model.Employee;
 
 public class EmployeeStorage {
         private Employee[] array = new Employee[10];
@@ -52,17 +54,17 @@ public class EmployeeStorage {
             return check;
         }
 
-        public void searchByCompanyName(String companyNameSearch) {
+        public void searchByCompany(String company) {
             boolean found = false;
             for (int i = 0; i < size; i++) {
                 Employee employee = array[i];
-                if (employee.getCompany().toLowerCase().contains(companyNameSearch.toLowerCase())) {
+                if (employee.getCompany(). equals(company)) {
                     found = true;
                     System.out.println(employee.getName() + " " + employee.getSurname());
                 }
             }
             if (!found) {
-                System.out.println("company " + companyNameSearch + "does not exits");
+                System.out.println("company " + company + "does not exits");
             }
         }
 
@@ -114,4 +116,7 @@ public class EmployeeStorage {
                 }
             }
         }
+
+    public void searchEmployeeByCompany(String companyId) {
     }
+}
