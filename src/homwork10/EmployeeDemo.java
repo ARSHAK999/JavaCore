@@ -21,36 +21,26 @@ public class EmployeeDemo  implements Commands {
         boolean isRun = true;
         while (isRun) {
             Commands.printCommands();
-            System.out.println("Please input 0 for exit");
-            System.out.println("Please input 1 for add employee");
-            System.out.println("Please input 2 for print all employee");
-            System.out.println("Please inout 3 for search employee by employee ID");
-            System.out.println("Please inout 4 for  search employee by company name");
-            System.out.println("Please input 5 for search employee by salary range");
-            System.out.println("Please input 6 for change employee position by id");
-            System.out.println("Please input 7 for print only active employees");
-            System.out.println("Please input 8 for inactive employee by id");
-            System.out.println("Please input 9 for activate employee by id");
             String command = scanner.nextLine();
             switch (command) {
-                case "EXIT":
+                case EXIT:
                     isRun = false;
                     break;
-                case "ADD_EMPLOYEE":
+                case ADD_EMPLOYEE:
                     employeeAdd();
                     break;
-                case "ADD_COMPANY":
+                case ADD_COMPANY:
                     AddCompany();
                     break;
-                case "PRINT_EMPLOYEES":
+                case PRINT_EMPLOYEES:
                     employeeStorage.print();
                     break;
-                case "SEARCH_EMPLOYEE_BY_ID":
+                case SEARCH_EMPLOYEE_BY_ID:
                     System.out.println("Please input employee ID");
                     String ID = scanner.nextLine();
                     System.out.println(employeeStorage.search(ID));
                     break;
-                case "SEARCH_EMPLOYEE_BY_COMPANY_ID":
+                case SEARCH_EMPLOYEE_BY_COMPANY_ID:
                     companyStorage.print();
                     System.out.println("Please input company id");
                     String companyId = scanner.nextLine();
@@ -61,26 +51,26 @@ public class EmployeeDemo  implements Commands {
                         System.out.println("Company does not exists!");
                     }
                     break;
-                case "SEARCH_EMPLOYEE_BY_SALARY_RANGE":
+                case SEARCH_EMPLOYEE_BY_SALARY_RANGE:
                     searchByRange();
                     break;
-                case "CHANGE_EMPLOYEE_POSITION_BY_ID":
+                case CHANGE_EMPLOYEE_POSITION_BY_ID:
                     changeEmployeePosition();
                     break;
-                case "PRINT_ONLY_ACTIVE_EMPLOYEES":
+                case PRINT_ONLY_ACTIVE_EMPLOYEES:
                     employeeStorage.printActiveEmployees();
                     break;
-                case "INACTIVE_EMPLOYEE_BY_ID":
+                case INACTIVE_EMPLOYEE_BY_ID:
                     System.out.println("Please input id for inactive employee");
                     String id = scanner.nextLine();
                     employeeStorage.inactiveEmployeeById(id);
                     break;
-                case "ACTIVATE_EMPLOYEE_BY_ID":
+                case ACTIVATE_EMPLOYEE_BY_ID:
                     System.out.println("Please input id for activate employee");
                     String activateId = scanner.nextLine();
                     employeeStorage.activateEmployeeById(activateId);
                     break;
-                case "PRINT_ALL_COMPANIES":
+                case PRINT_ALL_COMPANIES:
                     companyStorage.print();
                     break;
                 default:

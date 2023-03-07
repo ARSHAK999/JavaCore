@@ -14,4 +14,16 @@ public class Company {
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "getId='" + getId + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", employeeCount=" + employeeCount +
+                '}';
+    }
 }
